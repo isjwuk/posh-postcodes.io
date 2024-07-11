@@ -1,4 +1,4 @@
-$API_ROOT="https://api.postcodes.io/"
+$API_ROOT="https://api.postcodes.io"
 
 <#
 .SYNOPSIS
@@ -24,7 +24,7 @@ function Get-PostCodeInfo {
             [string] $Postcode
     )
     Process {
-        $result=Invoke-RestMethod -Uri https://api.postcodes.io/postcodes/$Postcode -Method Get -SkipHttpErrorCheck
+        $result=Invoke-RestMethod -Uri "$API_ROOT/postcodes/$Postcode" -Method Get -SkipHttpErrorCheck
         switch ($result.status) {
             200 {
                $result.result 
