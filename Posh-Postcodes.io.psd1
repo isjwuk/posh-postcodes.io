@@ -69,12 +69,14 @@ Copyright = ''
 NestedModules = @(  '.\methods\Get-PostcodeInfo.psm1',
                     '.\methods\Test-Postcode.psm1',
                     '.\methods\Get-NearestPostcode.psm1'
+                    '.\methods\Get-RandomPostcode.psm1'
                 )
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @('Get-PostcodeInfo',
                 'Test-Postcode',
-                'Get-NearestPostcode'
+                'Get-NearestPostcode',
+                'Get-RandomPostcode'
                 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
