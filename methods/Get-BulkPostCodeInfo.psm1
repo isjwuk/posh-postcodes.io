@@ -12,7 +12,7 @@
     Test-MyTestFunction -Verbose
     Explanation of the function or its result. You can include multiple examples with additional .EXAMPLE lines
 #>
-function Get-BulkPostCodeInfo {
+function Get-BulkPostcodeInfo {
   [CmdletBinding()]
   param(
         #Postcodes to Lookup. Required string. Case and space insensitive, examples 'SW1A 1AA', 'CF991SN'
