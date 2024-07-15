@@ -1,5 +1,7 @@
 # Pester Tests for Get-NearestPostcode
 BeforeAll {
+    Write-Host ($PSScriptRoot)
+    Get-ChildItem -Path $PSScriptRoot
     Import-Module $PSScriptRoot/../Posh-Postcodes.io.psd1
 }
 Describe 'Get-NearestPostcode' {
