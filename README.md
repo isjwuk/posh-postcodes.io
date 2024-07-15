@@ -21,7 +21,7 @@ Import-Module Posh-Postcodes.io
 ### Lookup a Postcode
 The following example will return information associated with the postcode ``L4 0TH``.
 ```powershell
-Get-PostCodeInfo -Postcode 'L4 0TH'
+Get-PostcodeInfo -Postcode 'L4 0TH'
 
 postcode                        : L4 0TH
 quality                         : 1
@@ -70,9 +70,9 @@ codes                           : @{admin_district=E08000012;
 Full descriptions and examples are available through ``Get-Help``, for example
 
 ```powershell
-Get-Help Get-PostCodeInfo -Examples
-Get-Help Test-PostCode
-Get-Help Get-NearestPostCode -ShowWindow
+Get-Help Get-PostcodeInfo -Examples
+Get-Help Test-Postcode
+Get-Help Get-NearestPostcode -ShowWindow
 ```
 
 ## Testing

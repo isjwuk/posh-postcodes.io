@@ -6,14 +6,14 @@ $API_ROOT="https://api.postcodes.io"
 .DESCRIPTION
     Returns true if the given postcode is valid, otherwise false
 .EXAMPLE
-    Test-PostCode -Postcode "EH99 1SP"
-    (or    Test-PostCode -Postcode "EH991sp"  )
+    Test-Postcode -Postcode "EH99 1SP"
+    (or    Test-Postcode -Postcode "EH991sp"  )
     Validate the Postcode EH99 1SP. This returns true for both as the postcode is valid and the function is case and space insensitive.
 .EXAMPLE
-    Test-PostCode -Postcode "Banana"
+    Test-Postcode -Postcode "Banana"
     Returns False as this postcode is very, very invalid.
 .EXAMPLE
-    "GU1 1AA", "GU1 1AB", "GU1 1AC", "GU1 1AD"  | Test-PostCode
+    "GU1 1AA", "GU1 1AB", "GU1 1AC", "GU1 1AD"  | Test-Postcode
     Validates each of these four correct-looking postcodes. The result is
         True
         False
@@ -21,7 +21,7 @@ $API_ROOT="https://api.postcodes.io"
         True
     As the first and fourth postcodes are valid and the middle two, despite being the correct format, don't exist in the database.
 #>
-function Test-PostCode {
+function Test-Postcode {
     [CmdletBinding()]
     [OutputType([Boolean])]
     param(

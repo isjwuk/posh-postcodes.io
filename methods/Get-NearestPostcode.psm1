@@ -28,7 +28,7 @@ function Get-NearestPostcode  {
   [CmdletBinding()]
   param(
     #Return nearest results for this postcode
-    [Parameter(Mandatory, ParameterSetName="PostCode")]
+    [Parameter(Mandatory, ParameterSetName="Postcode")]
     [string]$postcode,
     #Longitude pf Geolocation to return postcodes for
     [Parameter(Mandatory, ParameterSetName="GeoLocation")]
@@ -38,12 +38,12 @@ function Get-NearestPostcode  {
     [float]$Longitude,
     #(not required) Limits number of postcodes matches to return. Defaults to 10. Needs to be less than 100.
     [Parameter(Mandatory=$false, ParameterSetName="GeoLocation")]
-    [Parameter(Mandatory=$false, ParameterSetName="PostCode")]
+    [Parameter(Mandatory=$false, ParameterSetName="Postcode")]
     [ValidateRange(1,99)]
     [int]$limit=10,
     #(not required) Limits number of postcodes matches to return. Defaults to 100m. Needs to be less than 2,000m.
     [Parameter(Mandatory=$false, ParameterSetName="GeoLocation")]
-    [Parameter(Mandatory=$false, ParameterSetName="PostCode")]
+    [Parameter(Mandatory=$false, ParameterSetName="Postcode")]
     [ValidateRange(1,1999)]
     [int]$radius=100,
     #(not required) Search up to 20km radius, but subject to a maximum of 10 results. Since lookups over a wide area can be very expensive, we've created this method to allow you choose to make the trade off between search radius and number of results. Defaults to false. When enabled, radius and limits over 10 are ignored.
@@ -59,7 +59,7 @@ function Get-NearestPostcode  {
             if ($widesearch ){$URI+="&widesearch=true"} # Add the Widesearch parameter if selected.
             $result=Invoke-RestMethod -Uri $URI -Method Get -SkipHttpErrorCheck
         }
-        'PostCode' {
+        'Postcode' {
             $URI="$API_ROOT/postcodes/$postcode/nearest?limit=$limit&radius=$radius"
             $result=Invoke-RestMethod -Uri $URI -Method Get -SkipHttpErrorCheck
         }

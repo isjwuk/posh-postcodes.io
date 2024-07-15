@@ -10,14 +10,14 @@ $API_ROOT="https://api.postcodes.io"
 .LINK
     Specify a URI to a help page, this will show when Get-Help -Online is used.
 .EXAMPLE
-    Get-PostCodeInfo -Postcode 'SW1A 1AA'
+    Get-PostcodeInfo -Postcode 'SW1A 1AA'
     Return the information associated with the Postcode SW1A 1AA
 .EXAMPLE
-    "CF991SN", "SW1a 1aa" | Get-PostCodeInfo
+    "CF991SN", "SW1a 1aa" | Get-PostcodeInfo
     Return the information associated with the two Postcodes passed via the pipeline.
 #>
 
-function Get-PostCodeInfo {
+function Get-PostcodeInfo {
     param (
         #Postcode to Lookup. Required string. Case and space insensitive, examples 'SW1A 1AA', 'CF991SN'
         [Parameter(Mandatory=$true,ValueFromPipeline=$true)]

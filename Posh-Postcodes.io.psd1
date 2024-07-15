@@ -66,15 +66,15 @@ Copyright = ''
 # FormatsToProcess = @()
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = @(  '.\methods\Get-PostCodeInfo.psm1',
-                    '.\methods\Test-PostCode.psm1',
+NestedModules = @(  '.\methods\Get-PostcodeInfo.psm1',
+                    '.\methods\Test-Postcode.psm1',
                     '.\methods\Get-NearestPostcode.psm1'
                 )
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Get-PostCodeInfo',
-                'Test-PostCode',
-                'Get-NearestPostCode'
+FunctionsToExport = @('Get-PostcodeInfo',
+                'Test-Postcode',
+                'Get-NearestPostcode'
                 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
