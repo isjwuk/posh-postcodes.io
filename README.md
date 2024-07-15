@@ -78,7 +78,7 @@ Get-Help Get-NearestPostcode -ShowWindow
 ## Testing
 Pester is used for unit testing.
 ```powershell
-Invoke-Pester .\tests\*.Tests.ps1
+Invoke-Pester .\tests\*.Tests.ps1 -Output detailed
 ``` 
 
 PSScriptAnalyzer is used for identifying common issues
