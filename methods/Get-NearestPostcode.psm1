@@ -8,7 +8,10 @@ $API_ROOT="https://api.postcodes.io"
 .NOTES
     
 .LINK
-    
+
+.EXAMPLE
+    Get-NearestPostcode -postcode 'EC4M 8AD' | Select-Object postcode
+    Return the nearest postcodes to the given postcode.
 .EXAMPLE
     Get-NearestPostcode -Latitude 51.5012 -Longitude -0.1419
     Return all the data associated with the postcode for the selected Latitude and Longitude.
@@ -29,6 +32,9 @@ $API_ROOT="https://api.postcodes.io"
 function Get-NearestPostcode  {
   [CmdletBinding()]
   param(
+    #Return nearest results for this postcode
+    [Parameter(Mandatory, ParameterSetName="PostCode")]
+    [string]$postcode,
     #Longitude pf Geolocation to return postcodes for
     [Parameter(Mandatory, ParameterSetName="GeoLocation")]
     [float]$Latitude,
@@ -37,10 +43,12 @@ function Get-NearestPostcode  {
     [float]$Longitude,
     #(not required) Limits number of postcodes matches to return. Defaults to 10. Needs to be less than 100.
     [Parameter(Mandatory=$false, ParameterSetName="GeoLocation")]
+    [Parameter(Mandatory=$false, ParameterSetName="PostCode")]
     [ValidateRange(1,99)]
     [int]$limit=10,
     #(not required) Limits number of postcodes matches to return. Defaults to 100m. Needs to be less than 2,000m.
     [Parameter(Mandatory=$false, ParameterSetName="GeoLocation")]
+    [Parameter(Mandatory=$false, ParameterSetName="PostCode")]
     [ValidateRange(1,1999)]
     [int]$radius=100,
     #(not required) Search up to 20km radius, but subject to a maximum of 10 results. Since lookups over a wide area can be very expensive, we've created this method to allow you choose to make the trade off between search radius and number of results. Defaults to false. When enabled, radius and limits over 10 are ignored.
@@ -54,6 +62,10 @@ function Get-NearestPostcode  {
         'GeoLocation' {
             $URI="$API_ROOT/postcodes/?lon=$longitude&lat=$latitude&limit=$limit&radius=$radius"
             if ($widesearch ){$URI+="&widesearch=true"} # Add the Widesearch parameter if selected.
+            $result=Invoke-RestMethod -Uri $URI -Method Get -SkipHttpErrorCheck
+        }
+        'PostCode' {
+            $URI="$API_ROOT/postcodes/$postcode/nearest?limit=$limit&radius=$radius"
             $result=Invoke-RestMethod -Uri $URI -Method Get -SkipHttpErrorCheck
         }
     }

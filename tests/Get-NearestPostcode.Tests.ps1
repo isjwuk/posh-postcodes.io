@@ -21,4 +21,14 @@ Describe 'Get-NearestPostcode' {
         $result=Get-NearestPostcode -Latitude 51.506645 -Longitude 0.003015 -radius 250
         $result.count | Should -Be 2
     }
+    It 'Given a postcode return the nearest postcodes' {
+        $result=Get-NearestPostcode -postcode 'EC4M 8AD' | Select-Object postcode
+        $result.count | Should -Be 10
+    }
+    It 'Given a postcode return the nearest postcodes but require the radius parameter to get results' {
+        $result=Get-NearestPostcode -postcode 'SE10 0DX' | Select-Object postcode
+        $result.count | Should -Be 1
+        $result=Get-NearestPostcode -postcode 'SE10 0DX' -radius 250| Select-Object postcode
+        $result.count | Should -Be 7
+    }
 }
