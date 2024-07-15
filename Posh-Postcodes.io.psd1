@@ -12,7 +12,7 @@
 # RootModule = ''
 
 # Version number of this module.
-ModuleVersion = '0.0.1'
+ModuleVersion = '1.0.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -72,16 +72,19 @@ NestedModules = @(  '.\methods\Get-PostCodeInfo.psm1',
                 )
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = '*'
+FunctionsToExport = @('Get-PostCodeInfo',
+                'Test-PostCode',
+                'Get-NearestPostCode'
+                )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = '*'
+CmdletsToExport = ('')
 
 # Variables to export from this module
-VariablesToExport = '*'
+VariablesToExport = ('')
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = '*'
+AliasesToExport = ('')
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
@@ -98,13 +101,13 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+        Tags = @('uk','postcode')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/isjwuk/posh-postcodes.io?tab=MIT-1-ov-file#readme'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/isjwuk/posh-postcodes.io/'
 
         # A URL to an icon representing this module.
         # IconUri = ''

@@ -27,7 +27,7 @@ function Get-PostCodeInfo {
         $result=Invoke-RestMethod -Uri "$API_ROOT/postcodes/$Postcode" -Method Get -SkipHttpErrorCheck
         switch ($result.status) {
             200 {
-               $result.result 
+               $result.result
               }
             Default {
                 throw $result.error

@@ -17,9 +17,8 @@ function Get-RandomPostCode  {
     param(
   #    [parameter(ValueFromPipeline)]
     )
-  
+
     process {
-      
+   #TODO
     }
   }
-  
