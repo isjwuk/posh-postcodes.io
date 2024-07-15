@@ -5,10 +5,6 @@ $API_ROOT="https://api.postcodes.io"
     Returns nearest postcodes for a given longitude and latitude, or a given postcode.
 .DESCRIPTION
     Returns nearest postcodes for a given longitude and latitude, or a given postcode.
-.NOTES
-    
-.LINK
-
 .EXAMPLE
     Get-NearestPostcode -postcode 'EC4M 8AD' | Select-Object postcode
     Return the nearest postcodes to the given postcode.
@@ -24,10 +20,9 @@ $API_ROOT="https://api.postcodes.io"
 .EXAMPLE
     Get-NearestPostcode -Latitude 51.406207 -Longitude -0.337634 -limit 1
     Return the closest nearby postcode in the event of a non-postcoded location.
-.EXAMPLE   
+.EXAMPLE
     Get-NearestPostcode -Latitude 51.506645 -Longitude 0.003015 -radius 250
     Use the radius parameter to look further afield for the nearest postcode.
-
 #>
 function Get-NearestPostcode  {
   [CmdletBinding()]
@@ -69,16 +64,14 @@ function Get-NearestPostcode  {
             $result=Invoke-RestMethod -Uri $URI -Method Get -SkipHttpErrorCheck
         }
     }
-
     #Return the results
     switch ($result.status) {
         200 {
-            $result.result 
+            $result.result
             }
         Default {
             throw $result.error
         }
     }
-  
   }
 }

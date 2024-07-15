@@ -12,13 +12,13 @@
     Test-MyTestFunction -Verbose
     Explanation of the function or its result. You can include multiple examples with additional .EXAMPLE lines
 #>
-function Get-MatchingPostcodes {
+function Get-MatchingPostcode {
   [CmdletBinding()]
   param(
 #    [parameter(ValueFromPipeline)]
   )
 
   process {
-    
+    #TODO
   }
 }

@@ -16,11 +16,11 @@ function Get-BulkPostCodeInfo {
   [CmdletBinding()]
   param(
         #Postcodes to Lookup. Required string. Case and space insensitive, examples 'SW1A 1AA', 'CF991SN'
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
-            [string()] $Postcodes
+        #[Parameter(Mandatory=$true,ValueFromPipeline=$true)]
+        #    [string()] $Postcodes
   )
 
   process {
-    
+    #TODO
   }
 }

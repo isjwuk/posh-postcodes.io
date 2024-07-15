@@ -10,3 +10,9 @@ Pester is used for testing.
 ```powershell
 Invoke-Pester .\tests\*.Tests.ps1
 ``` 
+
+PSScriptAnalyzer is used for identifying common issues
+```powershell
+Invoke-ScriptAnalyzer -Path .\Posh-Postcodes.io.psd1
+Invoke-ScriptAnalyzer -Path .\methods\*.psm1
+```
