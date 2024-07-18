@@ -1,4 +1,4 @@
-# Pester Tests for Get-NearestPostcode
+# Pester Tests for Get-NearestOutwardcode
 BeforeAll {
     Import-Module $PSScriptRoot/../Posh-Postcodes.io.psd1
 }
