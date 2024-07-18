@@ -70,7 +70,8 @@ NestedModules = @(  '.\methods\Get-PostcodeInfo.psm1',
                     '.\methods\Test-Postcode.psm1',
                     '.\methods\Get-NearestPostcode.psm1',
                     '.\methods\Get-RandomPostcode.psm1',
-                    '.\methods\Get-MatchingPostcode.psm1'
+                    '.\methods\Get-MatchingPostcode.psm1',
+                    '.\methods\Get-NearestOutwardCode.psm1'
                 )
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
@@ -78,7 +79,8 @@ FunctionsToExport = @('Get-PostcodeInfo',
                 'Test-Postcode',
                 'Get-NearestPostcode',
                 'Get-RandomPostcode',
-                'Get-MatchingPostcode'
+                'Get-MatchingPostcode',
+                'Get-NearestOutwardCode'
                 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
@@ -88,7 +90,7 @@ CmdletsToExport = ('')
 VariablesToExport = ('')
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = ('')
+AliasesToExport = @('Get-NearestOutCode')
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
