@@ -24,13 +24,13 @@ GUID = '7ad1bc5a-e32d-455a-9de1-db5d702fc57a'
 Author = 'Chris Bradshaw'
 
 # Company or vendor of this module
-CompanyName = 'Unknown'
+CompanyName = 'IT Should Just Work'
 
 # Copyright statement for this module
 Copyright = ''
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'A PowerShell wrapper for the postcodes.io API used for working with UK postcode data'
 
 # Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''
