@@ -11,7 +11,7 @@ Describe 'Get-NearestOutwardcode' {
         $result=Get-NearestOutwardCode -outcode "EC4M" | Select-Object outcode
         $result.count | Should -Be 10
     }
-    It 'Given a non-postcoded location return the postcodes using the range parameter' {
+    It 'Given a gibberish outcode and using the alias should throw an error' {
          { Get-NearestOutCode -outcode "banana"} | Should -Throw -ExpectedMessage "Outcode not found"
     }
 }
