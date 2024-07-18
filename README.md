@@ -7,6 +7,18 @@ A PowerShell wrapper for the postcodes.io API used for working with UK postcode 
 >[Postcodes.io](https://postcodes.io/) is an open sourced project maintained by Ideal Postcodes.
 >It is a free resource, allowing developers to search, reverse geocode and extract UK postcode and associated data.
 
+## Functions
+The following functions are included in this module.
+|Name | Description |
+|-----|-------------|
+|Get-MatchingPostcode |  Submit a postcode query and receive a complete list of postcode matches and all associated postcode data.|
+|Get-NearestOutwardCode| Returns nearest outcodes for a given longitude and latitude or a given Outcode|
+|Get-NearestPostcode   | Returns nearest postcodes for a given longitude and latitude, or a given postcode.|
+|Get-OutwardCode       | Geolocation data for the centroid of the outward code specified.|
+|Get-PostcodeInfo      | Returns a single postcode entity for a given postcode.|
+|Get-RandomPostcode    | Returns a random postcode and all available data for that postcode.|
+|Test-Postcode         | Convenience method to validate a postcode.|
+
 ## Example Usage
 
 ### Install and Import the module
