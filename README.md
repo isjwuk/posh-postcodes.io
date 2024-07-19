@@ -22,6 +22,8 @@ The following functions are included in this module.
 ## Example Usage
 
 ### Install and Import the module
+The module can be installed from the [PowerShell Gallery](https://www.powershellgallery.com/packages/Posh-Postcodes.io)
+
 ```powershell
 Install-Module Posh-Postcodes.io 
 ```
